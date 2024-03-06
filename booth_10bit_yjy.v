@@ -1,0 +1,65 @@
+module booth_10bit_yjy (clk, rst, wi_8_bit, wi_a_0, wi_a_1, wo_pp_10bit);
+  parameter UUID = 0;
+  parameter NAME = "";
+  input wire clk;
+  input wire rst;
+
+  input  wire [7:0] wi_8_bit;
+  input  wire [0:0] wi_a_0;
+  input  wire [0:0] wi_a_1;
+  output  wire [15:0] wo_pp_10bit;
+
+  TC_Maker16 # (.UUID(64'd68985025365672163 ^ UUID)) Maker16_0 (.in0(wire_28), .in1(wire_2), .out(wire_17));
+  TC_Splitter8 # (.UUID(64'd3215079379106864572 ^ UUID)) Splitter8_1 (.in(wire_1), .out0(wire_0), .out1(wire_13), .out2(wire_18), .out3(wire_10), .out4(wire_14), .out5(wire_6), .out6(wire_24), .out7(wire_21));
+  TC_Maker8 # (.UUID(64'd621447194139464369 ^ UUID)) Maker8_2 (.in0(1'd0), .in1(wire_0), .in2(wire_13), .in3(wire_18), .in4(wire_10), .in5(wire_14), .in6(wire_6), .in7(wire_24), .out(wire_28));
+  TC_Maker8 # (.UUID(64'd3163519337041453312 ^ UUID)) Maker8_3 (.in0(wire_21), .in1(1'd0), .in2(1'd0), .in3(1'd0), .in4(1'd0), .in5(1'd0), .in6(1'd0), .in7(1'd0), .out(wire_2));
+  TC_Maker16 # (.UUID(64'd2900048059840069278 ^ UUID)) Maker16_4 (.in0(wire_1), .in1(8'd0), .out(wire_12));
+  adder_9bit_booth_yjy # (.UUID(64'd2159796303850836407 ^ UUID)) adder_9bit_booth_yjy_5 (.clk(clk), .rst(rst), .a(wire_17), .b(wire_12), .s(wire_23));
+  TC_Maker32 # (.UUID(64'd1594931103924969189 ^ UUID)) Maker32_6 (.in0(wire_11), .in1(wire_9), .in2(wire_1), .in3(wire_27), .out(wire_15));
+  TC_Maker8 # (.UUID(64'd668987342492600856 ^ UUID)) Maker8_7 (.in0(wire_3), .in1(wire_4), .in2(1'd0), .in3(1'd0), .in4(1'd0), .in5(1'd0), .in6(1'd0), .in7(1'd0), .out(wire_27));
+  TC_Splitter16 # (.UUID(64'd2702957973790714808 ^ UUID)) Splitter16_8 (.in(wire_23), .out0(wire_11), .out1(wire_9));
+  TC_DelayLine # (.UUID(64'd879726646224236974 ^ UUID), .BIT_WIDTH(64'd32)) DelayLine32_9 (.clk(clk), .rst(rst), .in(wire_15), .out(wire_19));
+  TC_Equal # (.UUID(64'd2217299520984043836 ^ UUID), .BIT_WIDTH(64'd32)) Equal32_10 (.in0(wire_19), .in1(wire_15), .out(wire_16));
+  TC_Not # (.UUID(64'd2148920179853443849 ^ UUID), .BIT_WIDTH(64'd1)) Not_11 (.in(wire_16), .out(wire_7));
+  TC_Mux # (.UUID(64'd3874965867296036567 ^ UUID), .BIT_WIDTH(64'd16)) Mux16_12 (.sel(wire_3), .in0(16'd0), .in1(wire_5), .out(wire_8));
+  TC_Mux # (.UUID(64'd2896139387592655613 ^ UUID), .BIT_WIDTH(64'd16)) Mux16_13 (.sel(wire_3), .in0(wire_17), .in1(wire_23), .out(wire_25));
+  TC_Mux # (.UUID(64'd4489920544078576048 ^ UUID), .BIT_WIDTH(64'd16)) Mux16_14 (.sel(wire_4), .in0(wire_8), .in1(wire_25), .out(wire_20));
+  TC_Maker16 # (.UUID(64'd828924545874653153 ^ UUID)) Maker16_15 (.in0(wire_1), .in1(8'd0), .out(wire_5));
+  TC_Register # (.UUID(64'd123414290381670838 ^ UUID), .BIT_WIDTH(64'd16)) Register16_16 (.clk(clk), .rst(rst), .load(wire_16), .save(wire_7), .in(wire_20), .out(wire_26));
+  TC_Mux # (.UUID(64'd1516375670778681790 ^ UUID), .BIT_WIDTH(64'd16)) Mux16_17 (.sel(wire_7), .in0(wire_26), .in1(wire_20), .out(wire_22));
+
+  wire [0:0] wire_0;
+  wire [7:0] wire_1;
+  assign wire_1 = wi_8_bit;
+  wire [7:0] wire_2;
+  wire [0:0] wire_3;
+  assign wire_3 = wi_a_0;
+  wire [0:0] wire_4;
+  assign wire_4 = wi_a_1;
+  wire [15:0] wire_5;
+  wire [0:0] wire_6;
+  wire [0:0] wire_7;
+  wire [15:0] wire_8;
+  wire [7:0] wire_9;
+  wire [0:0] wire_10;
+  wire [7:0] wire_11;
+  wire [15:0] wire_12;
+  wire [0:0] wire_13;
+  wire [0:0] wire_14;
+  wire [31:0] wire_15;
+  wire [0:0] wire_16;
+  wire [15:0] wire_17;
+  wire [0:0] wire_18;
+  wire [31:0] wire_19;
+  wire [15:0] wire_20;
+  wire [0:0] wire_21;
+  wire [15:0] wire_22;
+  assign wo_pp_10bit = wire_22;
+  wire [15:0] wire_23;
+  wire [0:0] wire_24;
+  wire [15:0] wire_25;
+  wire [15:0] wire_26;
+  wire [7:0] wire_27;
+  wire [7:0] wire_28;
+
+endmodule
